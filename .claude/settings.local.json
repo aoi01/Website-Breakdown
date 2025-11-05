@@ -6,7 +6,8 @@
       "Bash(git push:*)",
       "Bash(git mv *.svg *.png src/images/)",
       "Bash(python update_paths.py:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
