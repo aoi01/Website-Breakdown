@@ -10,7 +10,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   background-color: oklch(11.19% .043 272.2119);
   color: oklch(0.9261 0.032 285.75);
-  background-image: url("background.png");
+  background-image: url("src/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* 背景を固定 */
