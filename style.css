@@ -1,0 +1,425 @@
+
+/* 基本リセット & フォント設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: oklch(11.19% .043 272.2119);
+  color: oklch(0.9261 0.032 285.75);
+  background-image: url("background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 背景を固定 */
+  padding-top: 70px; /* 固定ヘッダー分の余白 */
+}
+
+/* --- ヘッダー --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(19, 18, 23, 0.8); /* 背景を少し透過 */
+  backdrop-filter: blur(10px); /* すりガラス効果 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo a {
+  color: inherit; /* 親要素の色を継承 */
+  text-decoration: none; /* 下線を削除 */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* PC用ナビゲーション */
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: oklch(0.9261 0.032 285.75);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: yellow;
+}
+
+/* ハンバーガーメニューアイコン */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: oklch(0.9261 0.032 285.75);
+  transition: all 0.3s;
+}
+
+/* モバイル用メニュー */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(19, 18, 23, 0.95);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a {
+  color: oklch(0.9261 0.032 285.75);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+
+/* --- コンテンツ共通 --- */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* --- top.html 専用スタイル --- */
+.top-container {
+    max-width: 800px;
+    margin: auto;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header-container .image-box {
+    margin: 0;
+}
+.image-box {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+.image-box a {
+    display: block;
+}
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.image-box.image1 img:hover,
+.image-box.image7 img:hover,
+.image-box.image2 img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.image-box:not(.image1):not(.image7):not(.image2) img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.image-box.image2 {
+    width: 40%;
+    margin: 20px 0 20px auto;
+}
+.image-box.image7 {
+    width: 60px; /* 幅を固定 */
+}
+
+/* --- 各ページのコンテンツ部分 --- */
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.intro-image {
+  flex: 1;
+}
+
+.intro-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.intro-text {
+  flex: 2;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: yellow;
+  border-bottom: 2px solid yellow;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.title_sub {
+    font-size: 48px;
+    font-weight: bold;
+    border-bottom: 1px solid oklch(0.9261 0.032 285.75);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 60px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.section-title .decoration {
+  width: 12px;
+  height: 40px;
+  background-color: rgb(229, 255, 0);
+}
+
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.step-box {
+  background-color: #5B8DFF;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.sub-section {
+  background-color: #234C99;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.content-list {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 2;
+  text-align: left;
+  padding-left: 20px;
+}
+.content-list h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+}
+.content-list p {
+    margin-bottom: 20px;
+}
+.content-list li {
+    margin-bottom: 10px;
+}
+
+.example img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+/* --- 区切り線とボタン --- */
+.line-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 50px;
+  margin: 40px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-container::before,
+.line-container::after {
+  content: "";
+  position: absolute;
+  width: calc(50% - 30px);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 50%;
+}
+
+.line-container::before { left: 0; }
+.line-container::after { right: 0; }
+
+.rocket {
+  transform: rotate(180deg);
+}
+
+.next-text {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #555;
+}
+
+.next-button img {
+  max-width: 60px;
+  max-height: 24px;
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .top-container {
+      width: 95%;
+  }
+
+  .intro {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .intro-text {
+      order: 1;
+  }
+  .intro-image {
+      order: 2;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+  .title_sub {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+  .section-title .decoration {
+    height: 30px;
+  }
+
+  .step-box {
+    width: 95%;
+    font-size: 18px;
+  }
+
+  .sub-section {
+    font-size: 20px;
+  }
+  
+  .image-box.image2 {
+      width: 60%;
+  }
+  .header-container {
+      align-items: flex-start;
+  }
+  .image-box.image7 {
+      margin-top: 10px;
+      width: 50px;
+  }
+}

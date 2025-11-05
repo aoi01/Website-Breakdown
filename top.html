@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サンプルページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* 基本リセット */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Inter, "Noto Sans JP";
+      background-image: url("background.png");
+      background-size:cover;
+      background-repeat: no-repeat;
+      background-color: oklch(11.19% .043 272.2119);
+      color: white;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    
+    /* 画像ボックス共通設定 */
+    .image-box {
+      width: 100%;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+    /* 画像リンクはブロック要素に */
+    .image-box a {
+      display: block;
+    }
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* 共通のトランジション設定 */
+      transition: transform 0.4s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    /* ヘッダー画像（image1）とハンバーガー画像（image7）のホバーアニメーション */
+    .image-box.image1 img:hover,
+    .image-box.image7 img:hover,
+    .image-box.image2 img:hover {
+      transform: translateY(8px);
+      box-shadow: 20px 10px 10px rgba(255, 255, 255, 0.5);
+    }
+    /* それ以外の画像のホバーアニメーション */
+    .image-box:not(.image1):not(.image7):not(.image2) img:hover {
+      transform: translateY(18px);
+      box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    /* ヘッダー画像とハンバーガー画像のサイズ調整 */
+    .image1 {
+      width: 100%;
+    }
+    .image2{
+        width: 40%;
+    }
+    .image7 {
+      width: 10%;
+    }
+    .image-box.image2 {
+      margin: 20px 0 20px 300px; /* 上下20px、左50px、右は自動ではなく0に設定 */
+    }
+    /* ヘッダーとハンバーガーを横並びにするコンテナ */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    /* ヘッダーコンテナ内の余白リセット */
+    .header-container .image-box {
+      margin: 0;
+    }
+    
+    /* セクションタイトルの装飾（左端に 14×67px の長方形を配置） */
+    .section-title {
+      display: flex;
+      align-items: center;
+      /* background-color: oklch(11.19% .043 272.2119); */
+      /* color: rgb(255, 255, 255); */
+      margin: 30px 0 10px;
+      padding: 5px 10px;
+      width: fit-content;
+    }
+    .section-title .decoration {
+      width: 12px;
+      height: 58px;
+      background-color: rgb(229, 255, 0); /* 装飾の色は必要に応じて変更可能 */
+      margin-right: 10px;
+    }
+    .section-title span {
+      display: inline-block;
+      line-height: 67px; /* テキストを縦中央に配置 */
+    }
+    
+    /* レスポンシブ対応 */
+    /* @media (max-width: 600px) {
+      .image3, .image4 {
+        height: 250px;
+      }
+      .image5 {
+        height: 120px;
+      }
+      /* 横並びが窮屈な場合は縦並びに */
+      /* .header-container {
+        flex-direction: column;
+      }
+    }  */
+          /* ラインとロケットを包むコンテナ */
+    .line-container {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 左右の線を作成 */
+    .line-container::before,
+    .line-container::after {
+      content: "";
+      position: absolute;
+      width: 40%; /* 左右の線の長さ */
+      height: 0.8px; /* 線の太さ */
+      background-color: #dbdbdb; /* 線の色 */
+      opacity: 0.3;
+      top: 50%;
+    }
+
+    /* 左の線 */
+    .line-container::before {
+      left: 0;
+    }
+
+    /* 右の線 */
+    .line-container::after {
+      right: 0;
+    }
+
+    /* ロケットのアイコン */
+    .rocket {
+      position: relative;
+      z-index: 10;
+      width: 29px; /* ロケットのサイズ */
+      height: 40px;
+      transform: rotate(180deg);
+    }
+
+    /* 次は... のスタイル */
+    .next-text {
+      color: oklch(0.9261 0.032 285.75);
+      font-size: 18px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* ボタンのコンテナ（中央揃えのため追加） */
+    .button-container {
+      display: flex;
+      justify-content: center; /* 中央揃え */
+      margin-bottom: 70px;
+    }
+
+    /* ボタンのデザイン */
+    .next-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #3f3a46; /* ボタンの背景色 */
+      color: oklch(0.9261 0.032 285.75); /* 文字色 */
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    /* ボタンのホバーエフェクト */
+    .next-button:hover {
+      background-color: #161616;
+    }
+
+    /* アイコンのスタイル */
+    .next-button img {
+      max-width: 70px;
+      max-height:30px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ヘッダーとハンバーガー（リンク付き） -->
+    <div class="header-container">
+      <div class="image-box image1">
+        <a href="header.html">
+          <img src="header.png" alt="ヘッダー画像">
+        </a>
+      </div>
+      <div class="image-box image7">
+        <a href="hamburger.html">
+          <img src="hamberger.png" alt="ハンバーガー画像">
+        </a>
+      </div>
+    </div>
+    
+    <!-- 検索画像 -->
+    <div class="image-box image2">
+      <a href="search.html">
+        <img src="search.png" alt="検索画像">
+      </a>
+    </div>
+    <div class="image-box image3">
+        <a href="slider.html">
+          <img src="slider.png" alt="クエリ画像">
+        </a>
+      </div>
+    <!-- メインコンテンツ画像 -->
+    <div class="image-box image3">
+      <a href="article.html">
+        <img src="article.png" alt="記事画像">
+      </a>
+    </div>
+
+    
+    <!-- FAQセクション（装飾付きタイトル） -->
+    <div class="section-title">
+      <div class="decoration"></div>
+      <span>よくある質問・FAQ</span>
+    </div>
+    <div class="image-box image4">
+      <a href="faq.html">
+        <img src="faq.png" alt="FAQ画像">
+      </a>
+    </div>
+    
+    <!-- お問い合わせフォームセクション（装飾付きタイトル） -->
+    <div class="section-title">
+      <div class="decoration"></div>
+      <span>お問い合わせフォーム</span>
+    </div>
+    <div class="image-box image5">
+      <a href="query.html">
+        <img src="query.png" alt="問い合わせ画像">
+      </a>
+    </div>
+    
+    <!-- フッター -->
+    <div class="image-box image6">
+      <a href="footer.html">
+        <img src="footer.png" alt="フッター画像">
+      </a>
+    </div>
+  </div>
+  
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+  <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+</div>
+
+<!-- 次のセクションへの案内 -->
+<p class="next-text">次は...</p>
+
+<!-- ボタンを中央揃えするためのコンテナ -->
+<div class="button-container">
+  <a href="header.html" class="next-button">
+    <img src="header.png" alt="アイコン"> ヘッダーとは
+  </a>
+</div>
+</body>
+</html>

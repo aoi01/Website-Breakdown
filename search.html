@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>検索ボックス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="hamburger.html">‹　前へ戻る</a>
+      <a href="slider.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="hamburger.html">‹　前へ戻る</a>
+    <a href="slider.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="search.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="search_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">検索ボックス</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+            検索ボックスとは、ユーザーがキーワードやフレーズを入力し、Webサイト内の特定の情報を探すためのツールです。例えば、ECサイトで「スニーカー」と入力すると、該当する商品が一覧表示されます。ブログやコーポレートサイトでも、読者が目的の記事やサービスを素早く見つけるために利用されます
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>検索ボックスの役割</div>
+      <div class="step-box"><span>2</span> 検索ボックスに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.検索ボックスの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>ユーザーの利便性向上</h2> 
+            <li>サイト内の膨大な情報から、ユーザーが求めているコンテンツを素早く探せるようにします。
+               </li>
+        </p>
+        <p>
+            <h2>離脱率の低下とCVR（コンバージョン率）向上</h2>
+            <li>検索機能がない場合、ユーザーは目的の情報を見つけられずにサイトを離脱します。検索ボックスがあれば、商品購入や記事閲覧まで導けます。<br>
+               例：ECサイトで「冬コート」と検索 → 商品ページに直接アクセスし購入に至る。</li>
+        </p>
+        <p>
+            <h2>ユーザーニーズの分析</h2>
+            <li>
+                検索履歴を分析することで、「どのキーワードが人気か」「不足しているコンテンツは何か」を把握できます。<br>
+                例：ブログ運営者が「WordPress 設定」の検索が多いことを発見 → 関連記事を追加。
+
+            </li>
+        </p>
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.検索ボックスに載せる情報</div>
+    <ul class="content-list">
+        <p>
+            <h2> プレースホルダー（例文）</h2>
+            <li>
+                例を示すことで、ユーザーの心理的ハードルを下げます。
+            </li>
+           
+        </p>
+        <p>
+            <h2>サジェスト機能</h2>
+            <li>入力途中で候補キーワードを表示。ユーザーの手間を省きます。<br>
+
+                例：「ブロ」と入力 → 「ブログ 書き方」「ブログ 収益化」が候補表示</li>
+        </p>
+        
+        <p>
+            <h2> 絞り込みオプション</h2>
+            <li>カテゴリーやタグで検索範囲を限定できる機能。</li>
+        </p>
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>デザインのわかりやすさ
+            </h2>
+            <li>情報の整理：
+                検索ボックスはページ上部や目立つ場所に配置。アイコン（虫眼鏡マーク）を使うと直感的</li>
+            <li>色はサイト全体のテーマカラーと統一しつつ、背景より目立たせます</li>
+        </p>
+        <p>
+            <h2>レスポンシブ対応</h2>
+           <li>
+            スマートフォンやタブレットでも快適に
+            PCだけでなく、スマホやタブレットでも適切に表示されるよう、レスポンシブデザインを取り入れましょう。たとえば、画面サイズに応じてメニューがハンバーガーメニューに変わるなど、工夫が必要です。
+           </li> 
+        </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <div class="pen">
+            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="pvooxdO" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/aoi01/pen/pvooxdO">
+                Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://public.codepenassets.com/embed/index.js"></script>
+          </div>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+        <p>以下は、デザインまとめサイトで紹介されている検索ボックスの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+        <li>
+          <p>UI LIBRARY 参考になるWebデザインをUIごとにまとめたギャラリーサイト</p>
+          <p>URL: <a href="https://design-library.jp/ui/category/filter" target="_blank">https://design-library.jp/ui/category/filter</a></p>
+        </li>
+        <li>
+          <p>Web Design Garden 毎日更新！Webデザイン参考ギャラリーサイト</p>
+          <p>URL: <a href="https://webdesigngarden.com/category/element/search-window/" target="_blank">https://webdesigngarden.com/category/element/search-window/</a></p>
+        </li>
+        <li>
+          <p>絞り込み検索とは？検索時の使い方からWebサイトに実装する方法まで徹底解説</p>
+          <p>URL: <a href="https://www.bsearchtech.com/blog/utilize/ec_site_search_drill_down/" target="_blank">https://www.bsearchtech.com/blog/utilize/ec_site_search_drill_down/</a></p>
+        </li>
+        <li>
+          <p>【2025年最新版】参考にしたいサイドバーデザイン集</p>
+          <p>URL: <a href="https://www.xserver.ne.jp/bizhp/sidebar-design/" target="_blank">https://www.xserver.ne.jp/bizhp/sidebar-design/</a></p>
+        </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="slider.html" class="next-button">
+      <img src="slider.png" alt="アイコン"> スライダー（カルーセル）
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

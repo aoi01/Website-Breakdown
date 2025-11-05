@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="article.html">‹　前へ戻る</a>
+      <a href="query.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="actual.html">‹　前へ戻る</a>
+    <a href="query.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="faq.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="main_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">よくある質問・FAQ（アコーディオン）</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+            アコーディオンは、クリックやタップでコンテンツを開閉できるUI（ユーザーインターフェース）です。名前の由来は、楽器のアコーディオンの蛇腹のように「開いたり閉じたりする動き」に似ていることから付けられました。
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>よくある質問・FAQの役割</div>
+      <div class="step-box"><span>2</span> よくある質問・FAQに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.よくある質問・FAQの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>スペースの節約</h2>
+            <li>多くの情報をコンパクトに整理できる</li>
+        </p>
+        <p>
+            <h2>操作性の向上</h2>
+            <li>スマホユーザーでもタップしやすく、直感的に使える</li>
+
+        </p>
+        <p>
+            <h2>デメリット</h2>
+            <li>認知されにくい：ユーザーの20%が「開閉機能に気付かない」という調査結果あり</li>
+            <li>操作の手間：複数の項目を開く場合は手間がかかる</li>
+        </p>
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.よくある質問・FAQに載せる情報</div>
+    <ul class="content-list">
+        <p>
+            <h2> 質問（見出し部分）</h2>
+            <li>
+                ユーザーがすぐに目を引くような、簡潔で分かりやすい文言を心がけましょう。
+            </li>
+           
+        </p>
+        <p>
+            <h2>回答（詳細部分）</h2>
+            <li>質問に対する具体的な回答を記述します。必要に応じて、関連するリンクや参考資料、画像なども入れるとさらに理解しやすくなります。</li>
+        </p>
+
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>「＋」や「▼」アイコン	</h2>
+            <li>開閉可能なことを伝える</li>
+        </p>
+        <p>
+            <h2>スムーズなアニメーションの実装</h2>
+           <li>
+            動作の滑らかさ：ユーザーがクリックした際に、スライドして回答が現れるアニメーションを入れると、操作感が向上します。
+           </li> 
+        </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <div class="pen">
+            <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="NPWWOOM" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/aoi01/pen/NPWWOOM">
+                Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://public.codepenassets.com/embed/index.js"></script>
+          </div>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+        <p>以下は、デザインまとめサイトで紹介されているアコーディオンの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+        <li>
+          <p>UI LIBRARY 参考になるWebデザインをUIごとにまとめたギャラリーサイト</p>
+          <p>URL: <a href="https://design-library.jp/ui/category/accordion/" target="_blank">https://design-library.jp/ui/category/accordion/</a></p>
+        </li>
+        <li>
+          <p>Web Design Garden 毎日更新！Webデザイン参考ギャラリーサイト</p>
+          <p>URL: <a href="https://webdesigngarden.com/category/element/accordion/" target="_blank">https://webdesigngarden.com/category/element/accordion/</a></p>
+        </li>
+        <li>
+          <p>【アコーディオンメニューの企業事例10選！メリット・デメリットなど</p>
+          <p>URL: <a href="https://www.xserver.ne.jp/bizhp/accordion-menu/" target="_blank">https://www.xserver.ne.jp/bizhp/accordion-menu/</a></p>
+        </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="query.html" class="next-button">
+      <img src="query.png" alt="アイコン"> 問い合わせフォーム
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

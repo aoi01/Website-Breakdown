@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="faq.html">‹　前へ戻る</a>
+      <a href="footer.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="faq.html">‹　前へ戻る</a>
+    <a href="footer.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="query.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="main_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">問い合わせフォーム</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+          問い合わせフォームとは、Webサイトやアプリ内に設置される入力フォームのことで、ユーザーが質問や要望、意見などを運営者に送信できる仕組みです。
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>問い合わせフォームの役割</div>
+      <div class="step-box"><span>2</span> 問い合わせフォームに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.問い合わせフォームの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>ユーザーとのコミュニケーションの架け橋</h2>
+            <li>簡単な連絡手段：
+              ユーザーは電話やメールアドレスを直接記憶する必要がなく、フォームに必要事項を入力するだけで問い合わせができるため、利用ハードルが低くなります。</li>
+            <li>効率的な情報収集：
+              問い合わせ内容をカテゴリー分けしたり、事前に選択肢を用意することで、ユーザーからの問い合わせ内容を整理して受け取ることができ、迅速な対応が可能になります。</li>
+        </p>
+        <p>
+            <h2>運営者側のメリット</h2>
+            <li>問い合わせ内容の一元管理：
+              フォームからの問い合わせは、システム上で一括管理できるため、メールや電話でバラバラに受け取るよりも、対応漏れや重複を防ぎやすいです。</li>
+            <li>
+              分析・改善への活用：
+              ユーザーがどのような問い合わせをしているかを分析することで、サイトの改善点やユーザーのニーズが見えてきます。
+            </li>
+        </p>
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.問い合わせフォームに載せる情報</div>
+    <ul class="content-list">
+        <p>
+            <h2> 名前（またはニックネーム）</h2>
+            <li>
+              誰からの問い合わせかを把握するために必要です。
+            </li>
+        </p>
+        <p>
+            <h2>メールアドレス</h2>
+            <li>回答や連絡を返すために必須の情報です。正しい形式（例：example@domain.com）で入力できるようにチェック機能を設けると良いでしょう。</li>
+
+        </p>
+        
+        <p>
+            <h2> 問い合わせ内容</h2>
+            <li>ユーザーがどんな質問や要望を持っているかを詳しく記入してもらうためのテキストエリア。文字数の制限や入力例を表示すると、より使いやすくなります。</li>
+        </p>
+    
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>入力例やプレースホルダ
+            </h2>
+            <li>各入力フィールドに例文や説明文を表示して、ユーザーが何を入力すればよいかを明確に伝えましょう。</li>
+        </p>
+        <p>
+            <h2>エラーチェック機能</h2>
+           <li>
+            メールアドレスの形式が正しいか、必須項目が入力されているかなどをリアルタイムでチェックし、エラー時には分かりやすいメッセージを表示する。
+           </li> 
+        </p>
+        <p>
+          <h2>セキュリティとプライバシー対策</h2>
+         <li>
+          スパム防止：
+CAPTCHA（画像認証）やreCAPTCHA（私はロボットではありません）を導入して、ボットによる自動送信を防ぎましょう。
+         </li>
+        <li>
+          個人情報の保護：
+入力された情報が安全に送信・保存されるよう、SSL/TLSなどの暗号化通信を利用し、プライバシーポリシーへのリンクを明示しましょう。
+        </li> 
+      </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <div class="pen">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="Jojjazx" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/aoi01/pen/Jojjazx">
+            Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://public.codepenassets.com/embed/index.js"></script>
+          </div>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+        <p>以下は、デザインまとめサイトで紹介されている問い合わせフォームの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+        <li>
+          <p>参考にしたい海外の問い合わせページのデザイン40選</p>
+          <p>URL: <a href="https://www.zendesk.co.jp/blog/contact-us-page/#" target="_blank">https://www.zendesk.co.jp/blog/contact-us-page/#</a></p>
+        </li>
+        <li>
+          <p>UI LIBRARY　参考になるWebデザインをUIごとにまとめたギャラリーサイト</p>
+          <p>URL: <a href="https://design-library.jp/ui/category/contact" target="_blank">https://design-library.jp/ui/category/contact</a></p>
+        </li>
+        <li>
+          <p>参考になるメールフォーム【おしゃれなデザイン17選】+6</p>
+          <p>URL: <a href="https://www.mubag.com/blog/mailform-design/" target="_blank">https://www.mubag.com/blog/mailform-design/</a></p>
+        </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="footer.html" class="next-button">
+      <img src="footer.png" alt="アイコン"> フッター
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

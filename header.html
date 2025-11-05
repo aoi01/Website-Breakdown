@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヘッダー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="top.html">‹　前へ戻る</a>
+      <a href="hamburger.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="top.html">‹　前へ戻る</a>
+    <a href="hamburger.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <div class="example">
+        <img src="header.png" alt="">
+
+    </div>
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="intro">
+      <div class="intro-image">
+        <img src="header_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">ヘッダーとは</h1>
+        <p class="description">
+          ヘッダーとは、ウェブサイトの上部に位置する帯状の部分で、全ページ共通して表示されます。主にサイトのロゴや目次などが配置され、訪問者がサイト内をスムーズに移動するための重要な役割を担っています。
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span> ヘッダーの役割</div>
+      <div class="step-box"><span>2</span> ヘッダーに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.ヘッダーの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>ブランドの顔としての役割</h2>
+            <li>
+              ヘッダーには企業やサイトのロゴ、サイト名が必ず入ります。これにより、ユーザーは「ここはどんなサイトだろう？」と瞬時に判断でき、サイト全体の印象を決定付ける大事な部分となります。例えば、シンプルなロゴだけを置いている場合もあれば、ロゴとともにキャッチフレーズを添えているケースもあります。
+            </li>
+          
+        </p>
+        <p>
+            <h2>ユーザーの移動を助ける</h2>
+            <li>
+              ヘッダーにはサイトの主要なページへのリンク（グローバルナビゲーション）が配置されています。
+
+            </li>
+        </p>
+
+        <p>
+            <h2>アクションを促す</h2>
+            <li>
+              場合によっては、問い合わせや会員登録、購入ボタンなど、ユーザーに何らかのアクションを起こしてもらうためのボタンが設置されます。<br>
+            
+            </li>
+           <li>
+            CTA（Call To Action）:CTAとはCall To Action（行動喚起）と訳され、Webサイトの訪問者を具体的な行動に誘導する箇所を意味します。
+            とくに、お問い合わせや資料請求、電話番号は欠かせない要素です。
+           </li>
+           
+        </p>
+        <div>
+          <a href=""></a>
+        </div>
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.ヘッダーに載せるべき情報</div>
+    <ul class="content-list">
+        <p>
+            <h2>ロゴとサイト名</h2>
+            <li>
+                ロゴ:
+                サイトや企業の象徴となるロゴは、ヘッダーの中でも最も目立つ位置に配置します。これにより、ユーザーはすぐにそのサイトがどんなブランドかを認識できます。<br>
+                <li>
+                    サイト名:
+                    ロゴと一緒に表示されることが多く、ブランド名やサイトのテーマが分かるようにします。
+                </li>
+
+            </li>
+           
+        </p>
+        <p>
+            <h2>ナビゲーションメニュー</h2>
+            <li>主要なリンク
+                ホーム、サービス、会社概要、ブログ、問い合わせなど、サイトの重要なページへのリンクを並べます。</li>
+            <li>ドロップダウンメニュー
+                多くの情報をコンパクトにまとめるために、マウスオーバーやクリックで展開するドロップダウンメニューを採用することもあります</li>
+        </p>
+        
+        <p>
+            <h2>コンタクト情報とSNSリンク
+            </h2>
+            <li>問い合わせ先
+                電話番号、メールアドレス、または問い合わせフォームへのリンクなどを表示することで、ユーザーは簡単に連絡を取ることができます。</li>
+            <li>SNSアイコン
+                Facebook、Twitter、Instagramなどのアイコンを設置し、他のプラットフォームでの情報発信へ誘導することも効果的です。</li>
+        </p>
+        <p>
+            <h2>ログイン・会員登録ボタン</h2>
+            <li>
+                ユーザーのアカウント管理
+                会員制サイトやECサイトの場合、ログインや会員登録ボタンを設け、ユーザーがすぐにアカウント操作できるようにします。
+            </li>
+
+        </p>
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>シンプルでわかりやすいデザイン
+            </h2>
+            <li>情報の整理
+                ヘッダーに情報を詰め込みすぎると、かえって見にくくなります。最低限必要な要素だけを厳選し、余白を十分に取りましょう。</li>
+            <li>視認性の高いレイアウト
+                文字の大きさ、色、フォントを工夫し、どのデバイスからでも見やすいデザインにすることが重要です。</li>
+        </p>
+        <p>
+            <h2>レスポンシブ対応</h2>
+           <li>
+            スマートフォンやタブレットでも快適に
+            PCだけでなく、スマホやタブレットでも適切に表示されるよう、レスポンシブデザインを取り入れましょう。たとえば、画面サイズに応じてメニューがハンバーガーメニューに変わるなど、工夫が必要です。
+           </li> 
+        </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <div class="pen">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="bNGGEgp" data-pen-title="header" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/aoi01/pen/bNGGEgp">
+            header</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://public.codepenassets.com/embed/index.js"></script>
+          </div>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+      <p>以下は、デザインまとめサイトで紹介されているヘッダーの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+      <li>
+        <p>UI LIBRARY 参考になるWebデザインをUIごとにまとめたギャラリーサイト</p>
+        <p>URL: <a href="https://design-library.jp/ui/category/header" target="_blank">https://design-library.jp/ui/category/header</a></p>
+      </li>
+      <li>
+        <p>ヘッダー（グローバルナビゲーション）のデザイン事例100選</p>
+        <p>URL: <a href="https://note.com/akane_desu/n/nd079b5e83727" target="_blank">https://note.com/akane_desu/n/nd079b5e83727</a></p>
+      </li>
+      <li>
+        <p>おしゃれなヘッダーの参考例4選！魅力的なデザインにするポイントも解説</p>
+        <p>URL: <a href="https://wepage.com/blog/article/134/index.html" target="_blank">https://wepage.com/blog/article/134/index.html</a></p>
+      </li>
+      <li>
+        <p>【2025年最新版】参考にしたいヘッダーデザイン集        </p>
+        <p>URL: <a href="https://www.xserver.ne.jp/bizhp/header-design/" target="_blank">https://www.xserver.ne.jp/bizhp/header-design/</a></p>
+      </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+  <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+</div>
+
+<!-- 次のセクションへの案内 -->
+<p class="next-text">次は...</p>
+
+<!-- ボタンを中央揃えするためのコンテナ -->
+<div class="button-container">
+  <a href="hamburger.html" class="next-button">
+    <img src="hamberger.png" alt="アイコン"> ハンバーガーメニュー
+  </a>
+</div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

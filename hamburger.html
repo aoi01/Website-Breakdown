@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハンバーガーメニュー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="header.html">‹　前へ戻る</a>
+      <a href="search.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="header.html">‹　前へ戻る</a>
+    <a href="search.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="hamberger.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="hamberger_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">ハンバーガーメニュー</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+          ハンバーガーメニューとは、画面の隅に配置される3本の水平線が並んだアイコンのことを指します。このアイコンをタップまたはクリックすると、隠れていたナビゲーションメニューが展開して表示される仕組みです。名前の由来は、3本の線が重なった様子がハンバーガーに見えることから来ています
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>ハンバーガーメニューの役割</div>
+      <div class="step-box"><span>2</span> ハンバーガーメニューに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.ハンバーガーメニューの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>画面をスッキリさせる</h2>
+            <li>PC用メニュー（例：ヘッダーに並んだ5項目）をスマホでは≡に集約</li>
+            <li>シンプルなデザイン: 画面上部にアイコン1つだけを表示するため、全体のデザインがすっきりとし、ユーザーに安心感を与えます。
+            <li>レスポンシブ対応: デスクトップ版とモバイル版で異なるレイアウトを採用する際に、特にモバイルでの操作性向上に役立ちます。
+        </p>
+        <p>
+            <h2>ユーザー体験（UX）の向上</h2>
+            <li>直感的な操作: ハンバーガーアイコンは今や多くのユーザーにとってなじみ深いデザインです。どこに何があるかを直感的に理解できるため、初めてのユーザーでも迷いにくい設計になっています。</li>
+            <li>
+              デザインの一体感: サイト全体のデザインをシンプルに保つことで、ユーザーはコンテンツに集中でき、使いやすさや操作感が向上します。
+            </li>
+        </p>
+        <p>
+            <h2>更新しても他の要素に影響を与えにくい</h2>  <li>ハンバーガーメニューには、ページを更新しても他の要素に影響を与えにくいというメリットもあります。
+
+              なぜなら、ハンバーガーメニューに格納されたメニューは、別の領域として独立しているからです</li>
+        </p>
+      
+
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.ハンバーガーメニューに載せる情報</div>
+    <ul class="content-list">
+      <h1>機能の優先度一覧</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>優先度</th>
+            <th>項目</th>
+            <th>具体例</th>
+            <th>理由</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="priority-essential">必須</td>
+            <td>主要ページ</td>
+            <td>ホーム・お問い合わせ</td>
+            <td>ユーザーの基本行動をカバー</td>
+          </tr>
+          <tr>
+            <td class="priority-high">高</td>
+            <td>検索窓</td>
+            <td>商品名や記事を検索</td>
+            <td>直感的な操作を提供</td>
+          </tr>
+          <tr>
+            <td class="priority-medium">中</td>
+            <td>アカウント関連</td>
+            <td>ログイン・会員登録</td>
+            <td>コンバージョンに直結</td>
+          </tr>
+          <tr>
+            <td class="priority-low">低</td>
+            <td>言語切り替え</td>
+            <td>日本語/English</td>
+            <td>国際サイトの場合</td>
+          </tr>
+          <tr>
+            <td class="priority-ng">NG</td>
+            <td>広告バナー</td>
+            <td>他サービス宣伝</td>
+            <td>ユーザーを混乱させる</td>
+          </tr>
+        </tbody>
+      </table>
+        <p>
+            <h2>業種別おすすめ項目</h2>
+            <li>ECサイト：カテゴリ一覧・お気に入り・注文履歴</li>
+            <li>美容院：施術メニュー・スタッフ紹介・予約フォーム </li>
+            <li>企業サイト：採用情報・ダウンロード資料・IR情報</li>
+
+            
+        </p>
+    
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>アイコンの分かりやすさ
+            </h2>
+            <li>≡の横に「メニュー」とテキスト追加</li>
+            <li>サイズ：最低40×40px（指でタップしやすく）</li>
+        </p>
+        <p>
+            <h2>背景の透過処理</h2>
+           <li>
+            メニュー展開時、背後コンテンツを薄暗く(ハンバーガーメニューを開いた状態でもWebページを閲覧できるようにしましょう)
+           </li> 
+        </p>
+        <p>
+          <h2>閉じるボタンの明確化</h2>
+         <li>
+          「×」アイコンを右上に配置
+         </li> 
+
+      </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <div class="pen">
+          <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="pvooObN" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/aoi01/pen/pvooObN">
+            Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://public.codepenassets.com/embed/index.js"></script>
+          </div>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+        <p>以下は、デザインまとめサイトで紹介されているハンバーガーメニューの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+        <li>
+          <p>デジタル庁デザインシステム　ハンバーガーメニューボタン</p>
+          <p>URL: <a href="https://design.digital.go.jp/components/hamburger-menu-button/" target="_blank">https://design.digital.go.jp/components/hamburger-menu-button/</a></p>
+        </li>
+        <li>
+          <p>PHOTOPIZZA 【CSSのみ】おしゃれなデザインのハンバーガーメニュー13選【コピペOK】</p>
+          <p>URL: <a href="https://photopizza.design/css_hamburger_menu/" target="_blank">https://photopizza.design/css_hamburger_menu/</a></p>
+        </li>
+        <li>
+          <p>【WEBデザイン】今すぐ参考にしたい！ハンバーガーメニューデザインまとめ【UIパーツ決定版】</p>
+          <p>URL: <a href="https://mixltd.jp/blog/%E3%80%90web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%80%91%E4%BB%8A%E3%81%99%E3%81%90%E5%8F%82%E8%80%83%E3%81%AB%E3%81%97%E3%81%9F%E3%81%84%EF%BC%81%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%AC/" target="_blank">https://mixltd.jp/blog/%E3%80%90web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%80%91%E4%BB%8A%E3%81%99%E3%81%90%E5%8F%82%E8%80%83%E3%81%AB%E3%81%97%E3%81%9F%E3%81%84%EF%BC%81%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%AC/</a></p>
+        </li>
+        <li>
+          <p>ハンバーガーメニューの事例10選！最適化するコツも解説</p>
+          <p>URL: <a href="https://www.xserver.ne.jp/bizhp/hamburger-menu/" target="_blank">https://www.xserver.ne.jp/bizhp/hamburger-menu/</a></p>
+        </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="search.html" class="next-button">
+      <img src="search.png" alt="アイコン"> 検索ボックス
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

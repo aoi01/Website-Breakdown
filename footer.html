@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フッター</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="query.html">‹　前へ戻る</a>
+      <a href="../philosophy/">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="query.html">‹　前へ戻る</a>
+    <a href="../philosophy/">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="footer.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="footer_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">フッター</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+          フッターとは、ホームページの最下部を指します。<br>
+           ホームページ内のどのページにも「共通して表示されるようになっている」という点もフッターの特徴です。
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>フッターの役割</div>
+      <div class="step-box"><span>2</span> フッターに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.フッターの役割</div>
+    <ul class="content-list">
+      <p>
+        <h2>
+          サイトマップとしての役割
+        </h2>
+      </p>
+        <p>フッターは、ユーザーがサイト利用を終える際に必要な情報や、次の行動のヒントを提供する大切な部分です。具体的な役割は以下の通りです。</p>
+        <li>信頼性の向上：著作権表記やプライバシーポリシー、利用規約を掲載することで、サイトの信頼性を示します。</li>
+        <li>ナビゲーションの補助：サイトマップや関連リンクを設置し、ユーザーがサイト内の他のコンテンツにアクセスしやすくします。</li>
+        <li>ブランドの統一感：サイト全体のデザインと調和するフッターを作ることで、ブランドイメージを補完し、一貫した印象を与えます。</li>
+        <li>ユーザーサポート：問い合わせ先やSNSリンクなど、ユーザーが疑問や問い合わせを解決するための情報を提供します。</li>
+      
+
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.フッターに載せる情報</div>
+    <ul class="content-list">
+        <p>
+            <h2>基本的なナビゲーションリンク</h2>
+            <li>
+              主要なページリンク：ホーム、サービス、会社概要、ブログ、問い合わせなど、サイト内の重要なページへのリンクを一覧にまとめます。
+            </li>
+            <li>
+              サブメニュー：必要に応じて、カテゴリ別のリンクや、詳細なサブメニューを展開できるようにすることもあります。
+            </li>
+           
+        </p>
+        
+        <p>
+            <h2>コンタクト情報とSNSリンク
+            </h2>
+            <li>問い合わせ先：
+                電話番号、メールアドレス、または問い合わせフォームへのリンクなどを表示することで、ユーザーは簡単に連絡を取ることができます。</li>
+            <li>SNSアイコン：
+                Facebook、Twitter、Instagramなどのアイコンを設置し、他のプラットフォームでの情報発信へ誘導することも効果的です。</li>
+        </p>
+        <p>
+            <h2>ログイン・会員登録ボタン</h2>
+            <li>
+                ユーザーのアカウント管理：
+                会員制サイトやECサイトの場合、ログインや会員登録ボタンを設け、ユーザーがすぐにアカウント操作できるようにします。
+            </li>
+
+        </p>
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>レスポンシブ対応</h2>
+           <li>
+            スマートフォンやタブレットでも快適に：
+            PCだけでなく、スマホやタブレットでも適切に表示されるよう、レスポンシブデザインを取り入れましょう。
+          </li> 
+        </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+<div class="pen">
+  <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="jEOOeXe" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+    <span>See the Pen <a href="https://codepen.io/aoi01/pen/jEOOeXe">
+    Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+  </p>
+  <script async src="https://public.codepenassets.com/embed/index.js"></script>
+</div>
+       
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+      <p>以下は、デザインまとめサイトで紹介されているフッターデザインの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+      
+      <li>
+        <p>Webクリエイターボックス – フッターデザインの実例集</p>
+        <p>URL: <a href="https://www.webcreatorbox.com/archives/footer-design" target="_blank">https://www.webcreatorbox.com/archives/footer-design</a></p>
+      </li>
+      <li>
+        <p>CodeGrid – フッターのデザインと実装テクニック</p>
+        <p>URL: <a href="https://www.codegrid.net/articles/footer-design" target="_blank">https://www.codegrid.net/articles/footer-design</a></p>
+      </li>
+      <li>
+        <p>TechAcademyマガジン – 使いやすいフッターレイアウトのポイント</p>
+        <p>URL: <a href="https://techacademy.jp/magazine/footer-design-tips" target="_blank">https://techacademy.jp/magazine/footer-design-tips</a></p>
+      </li>
+      <li>
+        <p>サイトデザインまとめ – フッター編</p>
+        <p>URL: <a href="https://sitedesign-matome.com/footer-design" target="_blank">https://sitedesign-matome.com/footer-design</a></p>
+      </li>
+      <li>
+        <p>GOOD WEB DESIGN – フッターデザイン特集</p>
+        <p>URL: <a href="https://goodwebdesign.jp/footer-design" target="_blank">https://goodwebdesign.jp/footer-design</a></p>
+      </li>
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="../philosophy/" class="next-button">
+      <img src="planet-alpha.png" alt="アイコン"> Webサイトってどうあるべき？
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

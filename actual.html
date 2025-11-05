@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>レスポンシブ対応 ヘッダー＋カルーセル</title>
+  <style>
+    /* Font Awesome の読み込み */
+    @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+    /* 共通ボックスサイズ設定 */
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 62.5%;
+    }
+    body {
+      background-color: #020314;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #212529;
+    }
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+    /* ヘッダー内のコンテンツ配置 */
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+    /*────────────────────────────
+      単一ボタンヘッダー（ブランド＆ナビゲーション）
+    ─────────────────────────────*/
+    .btn, a.btn, button.btn {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      padding: 1rem 4rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      color: #212529;
+      border-radius: 0.5rem;
+    }
+    a.btn-custom01 {
+      margin-bottom: 0.5rem;
+      padding: 0;
+      border-radius: 0.75rem;
+      border: 2px solid #000;
+      display: inline-block;
+    }
+    a.btn-custom01:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      transition: all 0.3s;
+      transform: translate3d(0, 0.75rem, -1rem);
+      border: 2px solid #000;
+      border-radius: inherit;
+      background: #ccc100;
+      box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    a.btn-custom01:after {
+      content: none;
+    }
+    .btn-custom01-front {
+      position: relative;
+      display: block;
+      padding: 1.5rem 3rem;
+      transition: all 0.3s;
+      border: 2px solid #000;
+      border-radius: inherit;
+      background: #fff100;
+    }
+    a.btn-custom01:hover {
+      transform: translate(0, 0.25rem);
+      background: #fff100;
+    }
+    a.btn-custom01:hover:before {
+      transform: translate3d(0, 0.5rem, -1rem);
+      box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    a.btn-custom01:active {
+      transform: translate(0, 0.75rem);
+    }
+    a.btn-custom01:active:before {
+      transform: translate3d(0, 0, -1rem);
+      box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    .btn-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .btn-content i {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    .btn-content span {
+      white-space: nowrap;
+    }
+
+    /*────────────────────────────
+      円形ハンバーガーメニューボタン
+    ─────────────────────────────*/
+    .btn-hamburger {
+      position: relative;
+      display: inline-block;
+      width: 6rem;
+      height: 6rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #212529;
+      background: linear-gradient(145deg, #fff100, #ffd700);
+      border: 2px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+    .btn-hamburger:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ccc100;
+      border: 2px solid #000;
+      border-radius: inherit;
+      box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+      transform: translate3d(0, 0.75rem, -1rem);
+      transition: all 0.3s;
+      z-index: -1;
+    }
+    /* .btn-hamburger:hover {
+      transform: translateY(0.25rem);
+    }
+    .btn-hamburger:hover:before {
+      transform: translate3d(0, 0.5rem, -1rem);
+      box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    .btn-hamburger:active {
+      transform: translateY(0.75rem);
+    }
+    .btn-hamburger:active:before {
+      transform: translate3d(0, 0, -1rem);
+      box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+    } */
+    .hamburger-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .hamburger-content i {
+      font-size: 2.5rem;
+    }
+
+    /*────────────────────────────
+      レスポンシブ対応（画面幅768px以下の場合）
+    ─────────────────────────────*/
+    @media screen and (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+      /* 単一ボタンヘッダー内のフォントサイズ・パディング縮小 */
+      a.btn-custom01 .btn-custom01-front {
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+      }
+      /* ハンバーガーメニューボタンのサイズ縮小 */
+      .btn-hamburger {
+        width: 5rem;
+        height: 5rem;
+      }
+      .hamburger-content i {
+        font-size: 2rem;
+      }
+    }
+
+    /*────────────────────────────
+      ハンバーガーメニュー領域（今回は常に非表示）
+    ─────────────────────────────*/
+    .menu {
+      display: none;
+    }
+
+    /*────────────────────────────
+      検索窓（ボタン風の押せるエフェクト付き）
+    ─────────────────────────────*/
+    .search {
+      position: relative;
+      width: 90%;         /* 画面幅の90% */
+      max-width: 336px;   /* 最大336px */
+      height: 40px;
+      margin: 2rem auto;  /* 上下に余白、横は中央寄せ */
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .search img {
+      width: 100%;        /* 親要素の幅に合わせる */
+      height: auto;
+      display: block;
+    }
+    .search:hover,
+    .search:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /*────────────────────────────
+      カルーセル
+    ─────────────────────────────*/
+    /* .carousel {
+      position: relative;
+      width: 80%;
+      max-width: 1000px;
+      max-height: 1000px;
+      margin: 4rem auto;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .carousel-button.prev {
+      left: 10px;
+    }
+    .carousel-button.next {
+      right: 10px;
+    }
+    /* カルーセルのインジケーター 
+.carousel-indicators {
+  text-align: center;
+  margin-top: 1rem;
+}
+.carousel-indicators button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.carousel-indicators button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+.carousel-indicators button.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+    @media screen and (max-width: 768px) {
+      .carousel-button {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+    } */
+        /* ボタン風に見せるための基本スタイル */
+    .carousel {
+      position: relative;
+      display: inline-block;
+      width: 90%;              /* 画面幅の90% */
+      max-width: 1200px;        /* 最大幅400px */
+      margin: 0px auto;       /* 上下に20px、左右は自動で中央寄せ */
+      cursor: pointer;         /* 押せることを示すポインター */
+      border: 2px solid #000;  /* 明瞭なボーダー */
+      border-radius: 8px;      /* 角を少し丸く */
+      overflow: hidden;        /* 角丸に合わせる */     /* 背景を白に */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    /* 画像は親要素のサイズに合わせる */
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* ホバー時・アクティブ時に下に沈むエフェクト */
+    .carousel:hover,
+    .carousel:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* レスポンシブ対応（画面幅768px以下の場合） */
+    @media screen and (max-width: 768px) {
+      .carousel {
+        max-width: 300px;  /* 小さい画面では最大幅300px */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <!-- 単一ボタンヘッダー（ブランド＆ナビゲーション） -->
+      <a href="#" class="btn btn-custom01">
+            <a href="header.svg"></a>
+          </div>
+      </a>
+      <!-- 円形ハンバーガーメニューボタン（クリックしても何も起こらない） -->
+      <button class="btn-hamburger">
+        <div class="hamburger-content">
+          <i class="fas fa-bars"></i>
+        </div>
+      </button>
+    </div>
+    <!-- ハンバーガーメニュー領域は常に非表示 -->
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 検索窓 -->
+  <div class="search">
+    <img src="C:\Users\aoi\Downloads\sample\検索窓.png" alt="検索窓">
+  </div>
+
+  <!-- カルーセル -->
+
+<!-- <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="C:\Users\aoi\Downloads\sample\スクリーンショット 2025-01-28 140606.png" alt="Carousel Image 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="C:\Users\aoi\Downloads\sample\スクリーンショット 2025-01-28 140656.png">
+      </div>
+      <div class="carousel-slide">
+        <img src="C:\Users\aoi\Downloads\sample\photo-1506880018603-83d5b814b5a6.avif">
+      </div>
+    </div>
+    インジケーター（ポチポチ）
+    <div class="carousel-indicators"></div>
+  
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
+  </div>
+  </div> -->
+  <div class="carousel">
+    <img src="slider.svg" alt="">
+  </div>
+
+ <script>
+//   // カルーセルの動作
+//   const track = document.querySelector('.carousel-track');
+//   const slides = Array.from(track.children);
+//   const nextButton = document.querySelector('.carousel-button.next');
+//   const prevButton = document.querySelector('.carousel-button.prev');
+//   const indicatorsContainer = document.querySelector('.carousel-indicators');
+
+//   let currentSlide = 0;
+
+//   // インジケーターを動的に生成
+//   slides.forEach((slide, index) => {
+//     const dot = document.createElement('button');
+//     if (index === 0) {
+//       dot.classList.add('active');
+//     }
+//     dot.addEventListener('click', () => {
+//       currentSlide = index;
+//       updateCarousel();
+//     });
+//     indicatorsContainer.appendChild(dot);
+//   });
+
+//   function updateCarousel() {
+//     track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+//     // インジケーターのアクティブ状態を更新
+//     const dots = indicatorsContainer.querySelectorAll('button');
+//     dots.forEach((dot, index) => {
+//       dot.classList.toggle('active', index === currentSlide);
+//     });
+//   }
+
+//   nextButton.addEventListener('click', () => {
+//     currentSlide = (currentSlide + 1) % slides.length;
+//     updateCarousel();
+//   });
+
+//   prevButton.addEventListener('click', () => {
+//     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//     updateCarousel();
+//   });
+</script>
+</body>
+</html>

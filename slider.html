@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スライダー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+      <span>Webサイト大解剖</span>
+    </div>
+    <!-- PC版メニュー -->
+    <div class="nav-links">
+      <a href="top.html">TOPに戻る</a>
+      <a href="search.html">‹　前へ戻る</a>
+      <a href="article.html">先に進む　›</a>
+      <a href="#">参考サイト集</a>
+    </div>
+    <!-- スマホ版ハンバーガーメニュー -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+  <!-- スマホ版のメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="top.html">TOPに戻る</a>
+    <a href="search.html">‹　前へ戻る</a>
+    <a href="article.html">先に進む　›</a>
+    <a href="#">参考サイト集</a>
+  </div>
+
+  <div class="container top-content">
+    <!-- Intro セクション：画像とテキスト -->
+    <div class="example">
+        <img src="slider.png" alt="">
+    </div>
+    <div class="intro">
+
+      <div class="intro-image">
+        <img src="main_top.png" alt="説明用画像">
+      </div>
+      <div class="intro-text">
+        <h1 class="title">スライダー（カルーセル）</h1><h1 class="title_sub">とは？</h1>
+        <p class="description">
+            スライダー（カルーセル）は、ウェブサイトの目立つ場所（トップページ上部など）に設置される「自動または手動でコンテンツが切り替わるエリア」です。<br>
+            ネットショップのトップページで、「新作スニーカー」「夏のセール」「限定クーポン」が順番に表示さたり、<br>
+            カフェのサイトで、「人気メニュー」「店舗雰囲気」「イベント情報」が5秒ごとに切り替わったりする部分
+        </p>
+      </div>
+    </div>
+
+    <!-- 解説の流れ -->
+    <h2 class="section-title">解説の流れ</h2>
+    <div class="steps">
+      <div class="step-box"><span>1</span>スライダーの役割</div>
+      <div class="step-box"><span>2</span> スライダーに載せる情報</div>
+      <div class="step-box"><span>3</span> 作成ポイント</div>
+      <div class="step-box"><span>4</span> 実際に作ってみよう</div>
+      <div class="step-box"><span>5</span> デザイン事例</div>
+    </div>
+
+    <!-- 同じレイアウトで表示させるため、2つのsub-sectionはどちらもこの.container内に配置 -->
+    <div class="sub-section">1.スライダーの役割</div>
+    <ul class="content-list">
+        <p>
+            <h2>一目で伝える</h2>
+            <li>
+                ユーザーがサイトに訪れて3秒以内に離脱するケースが多いため、瞬時に興味を引く。
+            </li>
+           
+        </p>
+        <p>
+            <h2>スペース節約</h2>
+            <li>1つのエリアで複数情報を表示可能</li>
+        </p>
+        <p>
+            <h2>
+              ユーザーに注目されやすくなる
+
+            </h2>
+             <li>一般的に、「人間には動くものを目で追う習性がある」と言われています。
+
+              コンテンツを単に並べるだけよりも、自動で切り替わるカルーセルを活用したほうが、動きが出るため、ユーザーの視線を集める効果を期待できるでしょう。</li>
+        </p>
+    </ul>
+
+    <!--2つ目 -->
+    <div class="sub-section">2.スライダーに載せる情報</div>
+    <ul class="content-list">
+        <p>
+          <table>
+            <tr>
+                <th>要素</th>
+                <th>具体例</th>
+                <th>ポイント</th>
+            </tr>
+            <tr>
+                <td>画像</td>
+                <td>商品写真・風景</td>
+                <td>人物の目線を中央に向けるとクリック率UP</td>
+            </tr>
+            <tr>
+                <td>キャッチコピー</td>
+                <td>「今なら初回50%OFF」</td>
+                <td>10文字以内で端的に</td>
+            </tr>
+            <tr>
+                <td>説明文</td>
+                <td>「全30色展開・在庫限り」</td>
+                <td>フォントサイズを大きく</td>
+            </tr>
+            <tr>
+                <td>CTAボタン</td>
+                <td>「購入する」「詳細を見る」</td>
+                <td>ボタン色は目立つように</td>
+            </tr>
+        </table>
+        </p>
+        <p>
+        </p>
+    </ul>
+    <div class="sub-section">3.作成ポイント</div>
+    <ul class="content-list">
+        <p>
+            <h2>枚数と順序に気をつける
+            </h2>
+            <li>
+              カルーセルデザインに取り入れる画像の枚数は3～5枚が妥当です。多くの情報を盛り込みたくなりますが、情報量が多すぎるとユーザーの興味が続かず見てもらえなくなるかもしれないからです。</li>
+            <li>ページが進むにつれてユーザーの興味が薄れてくる可能性があるため、優先順位の高いものから順番に掲載することをおすすめします。</li>
+        </p>
+        <p>
+            <h2>インジゲーターを設置する</h2>
+           <li>
+            カルーセルデザインでは一度に全ての情報が表示されません。そのため全部でページが何枚あるのか、何枚目を表示しているのかを示すインジゲーターを設置しましょう。
+           </li> 
+        </p>
+        <p>
+          <h2>手動でも動かせるようにする</h2>
+         <li>
+          スライドは自動的に切り替わる設定がほとんどですが、手動でも動かせるようにしておくことをおすすめします。
+         </li>
+         <li>表示時間が短いと情報をチェックしているうちに次のスライドに切り替わり、ユーザーのストレスになり得ます。ユーザーが内容をチェックしているうちに途中でスライドが切り替わらないように、一時停止や停止の設定をしておきましょう。</li>
+      </p>
+    </ul>    <div class="sub-section">4.実際に作ってみよう</div>
+    <ul class="content-list">
+        コード例を下に示すので、参考にしてみてください。編集することで右のResult画面が変化しします。
+        <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="jEOOepv" data-pen-title="Untitled" data-editable="true" data-user="aoi01" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/aoi01/pen/jEOOepv">
+            Untitled</a> by Aoi Kawauchi (<a href="https://codepen.io/aoi01">@aoi01</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://public.codepenassets.com/embed/index.js"></script>
+    </ul>
+    <div class="sub-section">5.デザイン事例</div>
+    <ul class="content-list">
+        <p>以下は、デザインまとめサイトで紹介されているカルーセルの事例です。実際のサイトを参考に、さまざまなアイディアや実装例を学ぶことができます。</p>
+        <li>
+          <p>SANKOU！ Webデザイン制作の参考になる国内の素敵なサイト集</p>
+          <p>URL: <a href="http://sankoudesign.com/category/slide/" target="_blank">http://sankoudesign.com/category/slide/</a></p>
+        </li>
+        <li>
+          <p>Web Design Garden 毎日更新！Webデザイン参考ギャラリーサイト</p>
+          <p>URL: <a href="https://webdesigngarden.com/category/element/slide/" target="_blank">https://webdesigngarden.com/category/element/slide/</a></p>
+        </li>
+        <li>
+          <p>カルーセル（スライダー）の活用事例10選！実装時の注意点も解説</p>
+          <p>URL: <a href="https://www.xserver.ne.jp/bizhp/carousel/" target="_blank">https://www.xserver.ne.jp/bizhp/carousel/</a></p>
+        </li>
+
+      
+    </ul>
+  </div> <!-- .container 終了 -->
+  
+
+ <!-- ロケット付きのライン -->
+ <div class="line-container">
+    <img src="rocket.png" alt="ロケット" class="rocket"> <!-- ロケット画像を挿入 -->
+  </div>
+
+  <!-- 次のセクションへの案内 -->
+  <p class="next-text">次は...</p>
+
+  <!-- ボタンを中央揃えするためのコンテナ -->
+  <div class="button-container">
+    <a href="article.html" class="next-button">
+      <img src="article.png" alt="アイコン"> 記事コンテンツ
+    </a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
